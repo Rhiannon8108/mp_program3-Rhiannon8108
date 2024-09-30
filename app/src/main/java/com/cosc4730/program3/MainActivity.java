@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private String log, ans;
     boolean addDot;
     boolean addOp;
-    boolean addNeg;
+    int addNeg;
 
 
     @Override
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         ans = " ";
         addDot = false;
         addOp = false;
-        addNeg = false;
+        addNeg = 0;
 
         calcAns.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,9 +73,11 @@ public class MainActivity extends AppCompatActivity {
 
              String [] tokens = log.split(" ");
 
-                /*if(tokens .length == 1 && tokens [0].startsWith("~")){
+/*
+                if(tokens .length == 1 && tokens [0].startsWith("~")){
                     ans = Double.toString(-Double.parseDouble(tokens[0].substring(1)));
-                }*/
+                }
+*/
 
                     switch (tokens [1].charAt(0)) {
                         case '+':
@@ -100,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                     displayAnswer();
                     log = ans;
                     addOp = false;
-                    addNeg =false;
+                    addNeg = 0;
                     addDot= false;
                     displayLog();
 
@@ -136,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
         ans = "";
         addDot = false;
         addOp = false;
+        addNeg = 0;
         displayLog();
         displayAnswer();
 
@@ -143,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void powOnClick(View view){
         addDot = false;
-        addNeg = false;
+        addNeg = 0;
 
         if(!log.isEmpty()) {
             if (log.substring(log.length() - 1, log.length()).equals(".")) {
@@ -161,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void divOnClick(View view){
       addDot = false;
-      addNeg = false;
+      addNeg = 0;
 
       if(!log.isEmpty()) {
           if (log.substring(log.length() - 1, log.length()).equals(".")) {
@@ -197,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void mulitOnClick(View view){
         addDot = false;
-        addNeg = false;
+        addNeg = 0;
         if(!log.isEmpty()) {
             if (log.substring(log.length() - 1, log.length()).equals(".")) {
                 backspace();
@@ -234,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void plusOnClick(View view){
         addDot = false;
-        addNeg = false;
+        addNeg = 0;
 
         if(!log.isEmpty()) {
             if (log.substring(log.length() - 1, log.length()).equals(".")) {
@@ -270,7 +273,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void subOnClick(View view){
         addDot = false;
-        addNeg = false;
+        addNeg = 0;
         if(!log.isEmpty()) {
             if (log.substring(log.length() - 1, log.length()).equals(".")) {
                 backspace();
@@ -287,28 +290,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void negOnClick(View view) {
         addDot = false;
-        addNeg = false;
         if (!log.isEmpty()) {
             if (log.endsWith(".")) {
                 backspace();
             }
-
-            if (!addNeg && !log.startsWith("~")) {
+            if (addNeg == 0 ) {
                 log = "~" + log;
-                addNeg = true;
+                addNeg++ ;
             }
-            if(log.startsWith("~")){
+            if(addNeg == 1){
                 //insert ~ behind operator / in front of second half of the expression.
                 log = log.replaceAll(" (\\d)", " ~$1");
-                addNeg = true;
+                addNeg++;
             }
-         /*   if (addNeg && log.startsWith("~")) {
+            if (addNeg == 2) {
                 log = log.substring(1);
-                addNeg = false;
-            } else{
+                addNeg ++;
+            } else if (addNeg == 3){
                 log = log.replaceAll(" (\\d)", "  $1");
-                addNeg = false;
-            }*/
+                addNeg = 0;
+            }
 
             displayLog();
         }
