@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/lightPink"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        app:layout_constraintEnd_toEndOf="@+id/calcLog"
+        app:layout_constraintStart_toEndOf="@+id/calcLog">
+
+        <EditText
+            android:id="@+id/calcLog"
+            android:layout_width="233dp"
+            android:layout_height="56dp"
+            android:layout_gravity="end"
+            android:gravity="right"
+            android:paddingTop="8dp"
+            android:paddingRight="8dp"
+            android:text="Calculator Log"
+            android:textColor="@color/darkPink"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/calcAns"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/calcAns"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.266"
+            tools:layout_conversion_absoluteHeight="40dp"
+            tools:layout_conversion_absoluteWidth="206dp">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/calcAns"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingRight="8dp"
+            android:text="@string/answer"
+            android:textColor="@color/darkPink"
+            android:textSize="45sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_absoluteHeight="75dp"
+            tools:layout_conversion_absoluteWidth="206dp">
+
+        </EditText>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:background="@color/darkestPink"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/lightPink">
+
+            <Button
+                android:id="@+id/AclearBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/Aclear"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="AclearOnClick">
+            </Button>
+
+            <Button
+                android:id="@+id/clearBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/clear"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="clearOnClick">
+            </Button>
+
+
+            <Button
+                android:id="@+id/powBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/power"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="powOnClick">
+            </Button>
+
+            <Button
+                android:id="@+id/divideBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text= "@string/divide"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="divOnClick">
+            </Button>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <Button android:id="@+id/sevenBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/seven"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="sevenOnClick">
+
+            </Button>
+
+            <Button
+                android:id="@+id/eightBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/eight"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="eightOnClick">
+            </Button>
+
+            <Button
+                android:id="@+id/nineBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/nine"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="nineOnClick">
+            </Button>
+
+
+            <Button
+                android:id="@+id/mulitBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/multiply"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="mulitOnClick">
+            </Button>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/fourBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="fourOnClick"
+                android:text="@string/four"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:textSize="@dimen/ButtonTextSize">
+
+            </Button>
+
+            <Button
+                android:id="@+id/fiveBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="fiveOnClick"
+                android:text="@string/five"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:textSize="@dimen/ButtonTextSize">
+
+            </Button>
+
+            <Button
+                android:id="@+id/sixBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="sixOnClick"
+                android:text="@string/six"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:textSize="@dimen/ButtonTextSize">
+
+            </Button>
+
+
+            <Button
+                android:id="@+id/addBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="plusOnClick"
+                android:text="@string/add"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:textSize="@dimen/ButtonTextSize">
+
+            </Button>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="89dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/oneBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                android:text="@string/one"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="oneOnClick">
+            </Button>
+
+            <Button
+                android:id="@+id/twoBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/two"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="twoOnClick">
+
+            </Button>
+
+            <Button
+                android:id="@+id/threeBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                android:text="@string/three"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="threeOnClick">
+
+            </Button>
+
+
+            <Button
+                android:id="@+id/subBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/sub"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="subOnClick">
+            </Button>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="89dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/negateBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/negate"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="negOnClick">
+
+            </Button>
+
+            <Button
+                android:id="@+id/dotBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/dot"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="dotOnClick">
+
+            </Button>
+            <Button
+                android:id="@+id/zero"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/zero"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="zeroOnClick">
+            </Button>
+
+            <Button
+                android:id="@+id/equalsBTN"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="@string/equals"
+                android:textSize="@dimen/ButtonTextSize"
+                android:textColor="@color/darkestPink"
+                android:backgroundTint="@color/lightPink"
+                android:onClick="equalOnClick">
+
+            </Button>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
